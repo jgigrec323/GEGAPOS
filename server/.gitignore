@@ -1,0 +1,25 @@
+# Node related
+node_modules/
+npm-debug.log
+
+# Environment variables
+.env
+
+# Editor folders and files
+.vscode/
+*.swp
+*.swo
+*.idea/
+
+# Build directories (sometimes used in frontend frameworks like React)
+/dist
+/build
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
