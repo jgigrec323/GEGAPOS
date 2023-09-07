@@ -23,14 +23,16 @@ const Order = sequelize.define('Order', {
     },
     created_at: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
     quantity: {
         type: DataTypes.INTEGER,
         allowNull: false
     }
 }, {
-    tableName: 'orders'
+    tableName: 'orders',
+    timestamps: false
 });
 
 module.exports = Order;

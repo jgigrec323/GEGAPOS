@@ -9,10 +9,10 @@ const User = sequelize.define('User', {
     },
     username: {
         type: DataTypes.STRING(50),
-        allowNull: false
+        allowNull: false,
     },
     user_pin_code: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.TEXT,
         allowNull: false
     },
     user_type: {
@@ -20,7 +20,8 @@ const User = sequelize.define('User', {
         allowNull: false
     }
 }, {
-    tableName: 'users'
+    tableName: 'users',
+    timestamps: false
 });
 
 module.exports = User;

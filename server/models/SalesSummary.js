@@ -9,7 +9,9 @@ const SalesSummary = sequelize.define('SalesSummary', {
     },
     date: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+
     },
     user_id: {
         type: DataTypes.INTEGER,
@@ -34,7 +36,8 @@ const SalesSummary = sequelize.define('SalesSummary', {
         allowNull: false
     }
 }, {
-    tableName: 'sales_summary'
+    tableName: 'sales_summary',
+    timestamps: false
 });
 
 module.exports = SalesSummary;

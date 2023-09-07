@@ -19,11 +19,12 @@ const FoodMenuItem = sequelize.define('FoodMenuItem', {
         }
     },
     item_price: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false
     }
 }, {
-    tableName: 'foods_menu_items'
+    tableName: 'foods_menu_items',
+    timestamps: false
 });
 
 module.exports = FoodMenuItem;

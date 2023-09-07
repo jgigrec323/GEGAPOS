@@ -14,9 +14,15 @@ const MenuLink = sequelize.define('MenuLink', {
     menu_visibility: {
         type: DataTypes.TINYINT(1),
         allowNull: false
+    },
+    url: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
+
 }, {
-    tableName: 'menu_links'
+    tableName: 'menu_links',
+    timestamps: false
 });
 
 module.exports = MenuLink;

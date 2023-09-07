@@ -20,7 +20,8 @@ const FoodMenuCategory = sequelize.define('FoodMenuCategory', {
         allowNull: false
     }
 }, {
-    tableName: 'foods_menu_categories'
+    tableName: 'foods_menu_categories',
+    timestamps: false
 });
 
 module.exports = FoodMenuCategory;

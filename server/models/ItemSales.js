@@ -30,7 +30,8 @@ const ItemSales = sequelize.define('ItemSales', {
         allowNull: false
     }
 }, {
-    tableName: 'item_sales'
+    tableName: 'item_sales',
+    timestamps: false
 });
 
 module.exports = ItemSales;

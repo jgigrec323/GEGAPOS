@@ -27,5 +27,8 @@ const RestaurantTable = sequelize.define('RestaurantTable', {
         }
     }
 }, {
-    tableName: 'table'
+    tableName: 'restaurant_tables',
+    timestamps: false
 });
+
+module.exports = RestaurantTable;
