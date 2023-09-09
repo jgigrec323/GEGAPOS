@@ -1,0 +1,55 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5rem;
+    height: calc(100vh - 13rem);
+    & .logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+    & .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: $linksFontSize;
+        gap: 1.5rem;
+        width: 17rem;
+        & .link {
+            padding: .5rem 1rem;
+            border-radius: 4px;
+        }
+        & .active {
+            background-color: #cccccc7d;
+        }
+    }
+    & .users {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: $usersFontSize;
+        gap: 1rem;
+        & .user {
+            width: fit-content;
+            border: 1px solid #cccccc7d;
+            padding: .5rem 1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            &:first-child {
+                background-color: #cccccc7d;
+            }
+        }
+        .userInitials {
+            background-color: #558;
+            width: 25px;
+            height: 25px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+    }
+}
