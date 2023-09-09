@@ -2,7 +2,7 @@ import React from 'react'
 
 function MainContainer({ children }) {
     return (
-        <div>{children}</div>
+        <div className='mainContainer'>{children}</div>
     )
 }
 

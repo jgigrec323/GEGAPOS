@@ -1,0 +1,108 @@
+.menu {
+    position: relative;
+    & .menuCategories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        & .category {
+            background-color: blueviolet;
+            padding: 1.5rem 1rem;
+            height: 100px;
+            border-radius: 7px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            &:nth-child(1) {
+                background-color: blueviolet;
+            }
+            &:nth-child(2) {
+                background-color: rgb(226, 43, 180);
+            }
+            &:nth-child(3) {
+                background-color: rgb(43, 156, 226);
+            }
+            &:nth-child(4) {
+                background-color: rgb(168, 43, 226);
+            }
+            &:nth-child(5) {
+                background-color: rgb(226, 43, 43);
+            }
+            &:nth-child(6) {
+                background-color: rgb(15, 13, 155);
+            }
+            &:nth-child(7) {
+                background-color: rgb(226, 113, 43);
+            }
+            &:nth-child(8) {
+                background-color: rgb(226, 43, 43);
+            }
+            &:nth-child(9) {
+                background-color: rgb(226, 43, 116);
+            }
+            &:nth-child(10) {
+                background-color: blueviolet;
+            }
+            &>span.mdi {
+                font-size: 3rem;
+            }
+            & .infosCategory {
+                & h2 {
+                    font-size: 1.7rem;
+                    margin-bottom: .2rem;
+                }
+                & p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+    & .menuItems {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        & .menuItem {
+            overflow: hidden;
+            position: relative;
+            background-color: $gray-color;
+            padding: 2rem;
+            height: 100px;
+            border-radius: 7px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            & .side {
+                position: absolute;
+                background-color: blueviolet;
+                width: 3%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            & .menuItemInfo {
+                & h2 {
+                    font-size: 1.7rem;
+                    margin-bottom: .2rem;
+                }
+                & p {
+                    font-size: 1.2rem;
+                }
+            }
+            & .qtySelection {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                font-size: 2rem;
+                justify-content: flex-end;
+                & .minus,
+                .plus {
+                    font-size: 2.5rem;
+                    border: 1px solid $gray-color;
+                    width: 3rem;
+                    border-radius: 10px;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
