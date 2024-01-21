@@ -1,203 +1,47 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { baseUrl } from '../utilities/baseUrl'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 function Menu() {
+    const navigate = useNavigate()
+    const [menuCategories, setMenuCategories] = useState([])
+    useEffect(() => {
+        axios.get(`${baseUrl}/foodMenuCategories`)
+            .then(Response => {
+                setMenuCategories(Response.data.categories)
+            })
+            .catch(err => {
+                throw err
+            })
+
+    }, [])
+    const handleClickOnCategory = (id) => {
+        navigate(`${id}`);
+    }
     return (
         <div className='menu'>
+
             <div className="menuCategories">
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Entrées gourmandes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Entrées gourmandes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Entrées gourmandes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Entrées gourmandes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Entrées gourmandes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Entrées gourmandes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Entrées gourmandes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Entrées gourmandes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Entrées gourmandes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
-                <div className="category">
-                    <span class="mdi mdi-room-service"></span>
-                    <div className="infosCategory">
-                        <h2>Boissons rafraîchissantes</h2>
-                        <p>12 articles</p>
-                    </div>
-                </div>
+                {
+                    menuCategories.map(category => (
+                        <div key={category.foods_menu_id} onClick={() => { handleClickOnCategory(category.foods_menu_id) }} className="category">
+                            <span className={`mdi ${category.menu_icon}`}></span>
+                            <div className="infosCategory">
+                                <h2>{category.menu_name}</h2>
+                                <p>{category.number_items} articles</p>
+                            </div>
+                        </div>
+                    ))
+                }
+
+
 
             </div>
             <div className="separator"></div>
             <div className="menuItems">
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
-                <div className="menuItem">
-                    <div className="side"></div>
-                    <div className="menuItemInfo">
-                        <h2>Roast beef</h2>
-                        <p className="price">350 000 GNF</p>
-                    </div>
-                    <div className="qtySelection">
-                        <span className="minus">-</span>
-                        <span className="qty">0</span>
-                        <span className="plus">+</span>
-                    </div>
-                </div>
+                <Outlet></Outlet>
+
             </div>
         </div>
     )

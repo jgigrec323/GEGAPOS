@@ -1,0 +1,98 @@
+section.dashboard {
+  & > .top {
+    text-align: right;
+    & select {
+      border: none;
+      background-color: $gray-color;
+      color: $secondary-color;
+      padding: 0.5rem;
+      border-radius: 7px;
+      outline: none;
+    }
+  }
+  & .bottom {
+    margin-top: 2rem;
+    & .sumBlocks {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      & .singleSum {
+        background-color: $gray-color;
+        border-radius: 7px;
+        padding: 3rem;
+        font-size: 1.5rem;
+        width: 170px;
+        height: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        & .top {
+          font-size: 4rem;
+        }
+        & .bottom {
+          & p:last-child {
+            padding-top: 0.5rem;
+            font-size: 3rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    & .statsBlock {
+      display: flex;
+      gap: 3rem;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      align-items: start;
+      & .todaysUpsale {
+        width: 250px;
+        border: 1px solid $secondary-color;
+        border-radius: 7px;
+        padding: 2rem;
+        flex: 1;
+        & .top {
+          display: flex;
+          justify-content: space-between;
+        }
+        & .bottom {
+          & .singleUpsale {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+            & .left {
+              background-color: $gray-color;
+              padding: 1rem;
+              border-radius: 3px;
+            }
+            & .right {
+              & .orderCount {
+                font-size: 1.2rem;
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+      }
+      & .acceptedOrders {
+        flex: 3;
+        border: 1px solid $secondary-color;
+        border-radius: 7px;
+        padding: 2rem;
+        & .top {
+          display: flex;
+          justify-content: space-between;
+          & select {
+            border: none;
+            background-color: $gray-color;
+            color: $secondary-color;
+            padding: 0.5rem;
+            border-radius: 7px;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}

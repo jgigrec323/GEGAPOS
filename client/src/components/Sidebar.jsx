@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from "axios"
+import { baseUrl } from "../utilities/baseUrl"
 
 function Sidebar() {
     const [links, setLinks] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:8080/api/menuLinks/getAllMenuLinks")
+        axios.get(`${baseUrl}/menuLinks/getAllMenuLinks`)
             .then(Response => {
                 setLinks(Response.data.menuLinks)
             })

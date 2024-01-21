@@ -10,6 +10,8 @@ import Accounting from './components/Accounting';
 import Settings from './components/Settings'
 import Login from './components/Login';
 import Registration from './components/Registration';
+import MenuItems from './components/MenuItems';
+import Orders from './components/Orders';
 
 
 
@@ -19,7 +21,10 @@ function App() {
       <Route path='login' element={<Login />}></Route>
       <Route path='register' element={<Registration />}></Route>
       <Route path='/' element={<Layout />}>
-        <Route index element={<Menu />}></Route>
+        <Route path='menu' element={<Menu />}>
+          <Route path=':categoryId' element={<MenuItems />}></Route>
+        </Route>
+        <Route path='orders' element={<Orders />}></Route>
         <Route path='dashboard' element={<Dashboard />}></Route>
         <Route path='tables' element={<Tables />}></Route>
         <Route path='reservation' element={<Reservation />}></Route>

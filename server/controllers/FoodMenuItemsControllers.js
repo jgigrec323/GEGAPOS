@@ -33,6 +33,20 @@ const getMenuItemById = async(req, res) => {
         res.status(500).json(error);
     }
 }
+const getMenuItemByCategoryId = async(req, res) => {
+    const { id } = req.params;
+
+    try {
+        const menuItem = await FoodMenuItems.findAll({ where: { item_categorie_id: id } });
+        if (menuItem) {
+            res.status(200).json(menuItem);
+        } else {
+            res.status(404).json({ message: 'Menu item not found' });
+        }
+    } catch (error) {
+        res.status(500).json(error);
+    }
+}
 const updateMenuItem = async(req, res) => {
     const { id } = req.params;
     const { item_name, item_categorie_id, item_price } = req.body;
@@ -75,4 +89,4 @@ const deleteMenuItem = async(req, res) => {
     }
 }
 
-module.exports = { createMenuItem, getAllMenuItems, getMenuItemById, updateMenuItem, deleteMenuItem }
+module.exports = { createMenuItem, getAllMenuItems, getMenuItemById, getMenuItemByCategoryId, updateMenuItem, deleteMenuItem }

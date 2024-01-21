@@ -8,6 +8,7 @@ function Layout() {
         <div className="layout">
             <Sidebar></Sidebar>
             <MainContainer>
+                <input type="search" className="searchInput" placeholder='Search' />
                 <Outlet></Outlet>
             </MainContainer>
         </div>

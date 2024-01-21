@@ -1,0 +1,106 @@
+.tables {
+  font-size: 1.3rem;
+  & .top {
+    margin-bottom: 2rem;
+    & .floorsBtn {
+      display: flex;
+      gap: 2rem;
+      & button {
+        background: none;
+        color: $secondary-color;
+        padding: 1rem;
+        outline: none;
+        border: 2px solid $secondary-color;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  & .middle {
+    border: 2px dashed $dark-color;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: calc(3 * (#{$tableheight} + 4rem) + 2 * #{$tablecolmarg});
+    & .tablesBySection {
+      display: grid;
+      /*       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ */
+      gap: $tablecolmarg;
+      .sectionA,
+      .sectionB,
+      .sectionC {
+        display: flex;
+        gap: 2rem;
+      }
+      .singleTable {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: $gray-color;
+        padding: 2rem;
+        height: $tableheight;
+        border-radius: 7px;
+        min-width: 7rem;
+        border-left: 10px solid greenyellow;
+      }
+    }
+    & .otherSections {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+  & .bottom {
+    font-size: 1.5rem;
+    display: flex;
+    gap: 10rem;
+    & .tablesSum {
+      border: 1px solid $dark-color;
+      border-radius: 10px;
+      padding: 1rem 4rem;
+      & .tablesLabels {
+        margin-top: 1rem;
+        display: flex;
+        gap: 2rem;
+        & .label {
+          & .labelColor {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+          & .labelText {
+            margin-right: 5px;
+          }
+          & .trait {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    & .tablesProgressSum {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      & .progressBar {
+        position: relative;
+        width: 170px;
+        height: 10px;
+        border: 2px solid $secondary-color;
+        border-radius: 5px;
+        & .progressValue {
+          position: absolute;
+          height: 100%;
+          width: 66.66%;
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+}

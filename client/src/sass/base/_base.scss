@@ -1,26 +1,29 @@
 *,
 *::after,
 *::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
 }
 
 html {
-    font-size: 62.5%;
-    font-family: "Roboto", sans-serif;
-    scroll-behavior: smooth;
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-    position: relative;
-    background-color: $main-color;
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+  position: relative;
+  background-color: $main-color;
+  height: 100vh;
+  width: 100vw;
 }
 
 a {
-    color: currentColor;
-    text-decoration: none;
+  color: currentColor;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }

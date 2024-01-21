@@ -1,0 +1,79 @@
+section.orders {
+  padding-bottom: 2rem;
+  & .separator {
+    margin: 1rem auto !important;
+    background-color: $secondary-color;
+  }
+  & .allOrders {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(0, 1fr);
+    grid-gap: 1rem;
+    & .singleOrder {
+      background-color: $gray-color;
+      width: 195px;
+      padding: 2rem;
+      border-radius: 10px;
+      height: fit-content;
+      & .orderInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .tableInfo {
+          color: $green-color;
+        }
+      }
+      & .orderBody {
+        & table {
+          width: 100%;
+          border-collapse: separate;
+          text-align: left;
+          & .price {
+            text-align: right;
+          }
+          & thead {
+            font-weight: normal;
+            font-size: 1.1rem;
+            & th {
+              padding-bottom: 1rem;
+            }
+          }
+          & tbody {
+            font-size: 1.1rem;
+            & td {
+              padding-bottom: 0.5rem;
+            }
+          }
+        }
+        & .subtotal {
+          font-size: 1.1rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: bold;
+        }
+      }
+      & .orderBtns {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        & button {
+          cursor: pointer;
+          font-size: 1.5rem;
+          outline: none;
+          border: none;
+          background-color: transparent;
+          border: 1px solid #404040;
+          padding: 1rem;
+          border-radius: 7px;
+          color: $secondary-color;
+          &.paymentBtn {
+            background-color: $dark-color;
+          }
+        }
+      }
+    }
+  }
+}

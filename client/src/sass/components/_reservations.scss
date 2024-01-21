@@ -1,0 +1,81 @@
+section.reservations {
+  & .top {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    & .floorsBtn {
+      display: flex;
+      gap: 2rem;
+      & button {
+        background: none;
+        color: $secondary-color;
+        padding: 1rem;
+        outline: none;
+        border: 2px solid $secondary-color;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+    & .newReservation {
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      background-color: $secondary-color;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 7px;
+    }
+  }
+  & .bottom {
+    & table {
+      border-collapse: collapse;
+      width: max-content;
+      & th,
+      & td {
+        border: 1px solid $gray-color;
+        text-align: center;
+        width: 75px;
+        height: 75px;
+        font-size: 1.2rem;
+      }
+      & th {
+        border: 1px solid $gray-color;
+        height: 25px;
+        padding: 10px;
+      }
+      & td {
+        border: 1px dashed $gray-color;
+        padding: 2px;
+      }
+      & td:first-child,
+      & th:first-child {
+        border: 1px solid $gray-color;
+      }
+      & td:not(:first-child) {
+        border-left: 1px dashed $gray-color;
+      }
+      & tr:not(:first-child) td {
+        border-top: 1px dashed $gray-color;
+      }
+      & .reservationBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        background-color: $gray-color;
+        border-radius: 5px;
+        padding: 5px;
+        & .persons {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          & span {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
